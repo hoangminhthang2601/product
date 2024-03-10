@@ -1,6 +1,0 @@
-[submodule "CCTIV_FE"]
-	path = CCTIV_FE
-	url = git@github.com:novodanaps/CCTIV_FE.git
-[submodule "CCTIV_BE"]
-	path = CCTIV_BE
-	url = git@github.com:novodanaps/CCTIV_BE.git
