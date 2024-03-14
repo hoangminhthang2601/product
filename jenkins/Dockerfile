@@ -2,6 +2,12 @@ FROM jenkins/jenkins:2.429
 
 USER root
 
+# install vim
+RUN apt-get update && apt-get install -y vim
+
+# install ansible
+RUN apt-get update && apt-get install -y ansible
+
 # Install Docker
 RUN apt-get update && \
     apt-get -y install ca-certificates curl && \
