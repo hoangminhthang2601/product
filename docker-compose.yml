@@ -1,38 +1,17 @@
-version: '3.9'
+version: '3'
 services:
-  app:
+  jenkins:
+    container_name: jenkins
+    image: jenkins
     build:
-      context: CCTIV_BE
-      args:
-        - DEV=true
+      context: jenkins
     ports:
-      - "8000:8000"
+      - "8080:8080"
     volumes:
-      - "./CCTIV_BE/src/:/app/"
-    command: >
-      sh -c "
-        uvicorn ailiver.main:app --reload --port 8000 --host 0.0.0.0
-      "
-    environment:
-      - PYTHONPATH=.
-      - DB_HOST=db
-      - DB_NAME=devdb
-      - DB_USER=devuser
-      - DB_PASSWORD=password
-    depends_on:
-      - db
+      - $PWD/jenkins/data:/var/jenkins_home
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - net
 
-  db:
-    image: postgres:15.5-alpine3.18
-    volumes:
-      - dev-db-data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_DB: devdb
-      POSTGRES_USER: devuser
-      POSTGRES_PASSWORD: password
-      PGDATA: /var/lib/postgresql/data/pgdata
-
-volumes:
-  dev-db-data:
+networks:
+  net:

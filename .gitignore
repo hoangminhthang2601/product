@@ -1,0 +1,3 @@
+# ignore jenkins home
+./jenkins/home/*
+./jeknins/data/
