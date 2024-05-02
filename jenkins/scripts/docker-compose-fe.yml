@@ -1,0 +1,9 @@
+version: "3"
+services:
+  fe:
+    build:
+      context: .
+      dockerfile: Dockerfile-node
+    working_dir: /app/cctiv_fe
+    ports:
+      - "5174:5173"
