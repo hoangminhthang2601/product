@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Build') {
+            steps {
+                sh "bash $WORKING_DIR/jenkins/scripts/be_dev_build.sh"
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh "bash $WORKING_DIR/jenkins/scripts/be_dev_test.sh"
+            }
+        }
+
+        stage('Push') {
+            steps {
+                sh "bash $WORKING_DIR/jenkins/scripts/be_dev_push.sh"
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh "bash $WORKING_DIR/jenkins/scripts/be_dev_deploy.sh"
+            }
+        }
+
+    }
+}
