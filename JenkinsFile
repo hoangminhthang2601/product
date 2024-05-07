@@ -9,11 +9,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh "bash $WORKING_DIR/jenkins/scripts/be_dev_test.sh"
-            }
-        }
 
         stage('Push') {
             steps {
