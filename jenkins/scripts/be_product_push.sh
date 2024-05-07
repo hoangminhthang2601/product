@@ -6,7 +6,7 @@ echo "Login to docker ..."
 docker login -u $DOCKER_ACCOUNT -p $DOCKER_PASSWORD
 
 echo "Tagging image ..."
-docker tag $IMAGE:$BUILD_TAG $DOCKER_USER/$IMAGE:be_$BUILD_TAG
+docker tag $IMAGE:$BUILD_TAG $DOCKER_USER/$IMAGE:be__product_$BUILD_TAG
 
 echo "Push image ..."
 docker push $DOCKER_USER/$IMAGE:be_$BUILD_TAG
