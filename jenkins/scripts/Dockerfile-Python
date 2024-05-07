@@ -2,9 +2,6 @@ FROM python:3.9-slim
 
 ENV PYTHONUNBUFFERED=1
 
-COPY ./build_be/requirements.txt /tmp/requirements.txt
-
-COPY ./build_be/requirements_dev.txt /tmp/requirements_dev.txt
 
 COPY ./build_be/src /app
 
