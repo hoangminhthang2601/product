@@ -18,7 +18,7 @@ set -e
     echo "### Copy file to build floder ###"
     cp -R $BE_REPO_PATH/src ./build_be_product
     cp -R $BE_REPO_PATH/tests ./build_be_product
-    cp $BE_REPO_PATH/
+   
 
     echo "### Starting build ###"
     docker-compose -f docker-compose-be.yml build --no-cache
