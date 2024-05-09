@@ -5,20 +5,20 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh "bash $WORKING_DIR/jenkins/scripts/be_dev_build.sh"
+                sh "bash $WORKING_DIR/jenkins/scripts/be_product_build.sh"
             }
         }
 
 
         stage('Push') {
             steps {
-                sh "bash $WORKING_DIR/jenkins/scripts/be_dev_push.sh"
+                sh "bash $WORKING_DIR/jenkins/scripts/be_product_push.sh"
             }
         }
 
         stage('Deploy') {
             steps {
-                sh "bash $WORKING_DIR/jenkins/scripts/be_dev_deploy.sh"
+                sh "bash $WORKING_DIR/jenkins/scripts/be_product_deploy.sh"
             }
         }
 
