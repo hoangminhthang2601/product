@@ -3,9 +3,9 @@ FROM python:3.9-slim
 ENV PYTHONUNBUFFERED=1
 
 
-COPY ./build_be/src /app
+COPY ./build_be_product/src /app
 
-COPY ./build_be/tests/ /app/tests
+COPY ./build_be_product/tests/ /app/tests
 
 WORKDIR /app
 
